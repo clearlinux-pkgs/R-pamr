@@ -4,7 +4,7 @@
 #
 Name     : R-pamr
 Version  : 1.55
-Release  : 6
+Release  : 7
 URL      : https://cran.r-project.org/src/contrib/pamr_1.55.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/pamr_1.55.tar.gz
 Summary  : Pam: prediction analysis for microarrays
