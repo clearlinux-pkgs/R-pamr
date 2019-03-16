@@ -4,7 +4,7 @@
 #
 Name     : R-pamr
 Version  : 1.56
-Release  : 15
+Release  : 16
 URL      : https://cran.r-project.org/src/contrib/pamr_1.56.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/pamr_1.56.tar.gz
 Summary  : Pam: Prediction Analysis for Microarrays
@@ -32,10 +32,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1549031053
+export SOURCE_DATE_EPOCH=1552780047
 
 %install
-export SOURCE_DATE_EPOCH=1549031053
+export SOURCE_DATE_EPOCH=1552780047
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -71,8 +71,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library pamr|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  pamr || :
 
 
 %files
@@ -99,7 +98,6 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/pamr/help/paths.rds
 /usr/lib64/R/library/pamr/html/00Index.html
 /usr/lib64/R/library/pamr/html/R.css
-/usr/lib64/R/library/pamr/libs/symbols.rds
 
 %files lib
 %defattr(-,root,root,-)
