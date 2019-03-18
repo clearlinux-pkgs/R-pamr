@@ -4,7 +4,7 @@
 #
 Name     : R-pamr
 Version  : 1.56
-Release  : 17
+Release  : 18
 URL      : https://cran.r-project.org/src/contrib/pamr_1.56.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/pamr_1.56.tar.gz
 Summary  : Pam: Prediction Analysis for Microarrays
@@ -32,10 +32,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552780047
+export SOURCE_DATE_EPOCH=1552933305
 
 %install
-export SOURCE_DATE_EPOCH=1552780047
+export SOURCE_DATE_EPOCH=1552933305
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
