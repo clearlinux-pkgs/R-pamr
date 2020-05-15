@@ -4,7 +4,7 @@
 #
 Name     : R-pamr
 Version  : 1.56.1
-Release  : 27
+Release  : 28
 URL      : https://cran.r-project.org/src/contrib/pamr_1.56.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/pamr_1.56.1.tar.gz
 Summary  : Pam: Prediction Analysis for Microarrays
@@ -12,7 +12,6 @@ Group    : Development/Tools
 License  : GPL-2.0
 Requires: R-pamr-lib = %{version}-%{release}
 BuildRequires : buildreq-R
-BuildRequires : util-linux
 
 %description
 No detailed description available
@@ -27,21 +26,22 @@ lib components for the R-pamr package.
 
 %prep
 %setup -q -c -n pamr
+cd %{_builddir}/pamr
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1571871242
+export SOURCE_DATE_EPOCH=1589537052
 
 %install
-export SOURCE_DATE_EPOCH=1571871242
+export SOURCE_DATE_EPOCH=1589537052
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -104,4 +104,3 @@ R CMD check --no-manual --no-examples --no-codoc pamr || :
 %defattr(-,root,root,-)
 /usr/lib64/R/library/pamr/libs/pamr.so
 /usr/lib64/R/library/pamr/libs/pamr.so.avx2
-/usr/lib64/R/library/pamr/libs/pamr.so.avx512
